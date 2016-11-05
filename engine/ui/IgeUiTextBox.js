@@ -24,6 +24,13 @@ var IgeUiTextBox = IgeUiElement.extend({
 			.middle(0)
 			.textAlignX(0)
 			.textAlignY(0)
+            /* yjpark changes begin
+                if Do the mount here, will have exceptions when calling mount(),
+                will access other functions in which this._fontEntity is still null.
+            */
+            ;
+            this._fontEntity
+            /* yjpark changes end */
 			.mount(this);
 		
 		var blurFunc = function () {

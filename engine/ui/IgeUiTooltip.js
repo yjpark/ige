@@ -40,6 +40,13 @@ var IgeUiTooltip = IgeUiElement.extend({
 			.textAlignY(0)
 			.nativeFont('10pt Arial')
 			.textLineSpacing(-5)
+            /* yjpark changes begin
+                if Do the mount here, will have exceptions when calling mount(),
+                will access other functions in which this._fontEntity is still null.
+            */
+            ;
+            this.fontEntityTitle
+            /* yjpark changes end */
 			.mount(this.titleBox);
 			
 		this.fontEntityText = new IgeFontEntity()
@@ -49,6 +56,13 @@ var IgeUiTooltip = IgeUiElement.extend({
 			.textAlignY(0)
 			.nativeFont('10pt Arial')
 			.textLineSpacing(-5)
+            /* yjpark changes begin
+                if Do the mount here, will have exceptions when calling mount(),
+                will access other functions in which this._fontEntity is still null.
+            */
+            ;
+            this.fontEntityText
+            /* yjpark changes end */
 			.mount(this.textBox);
 			
 		this.setContent(content);

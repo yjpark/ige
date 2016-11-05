@@ -104,6 +104,13 @@ var IgeUiMenuItem = IgeUiElement.extend({
 				.textAlignX(0)
 				.textAlignY(1)
 				.text(menuData.text)
+                /* yjpark changes begin
+                    if Do the mount here, will have exceptions when calling mount(),
+                    will access other functions in which this._fontEntity is still null.
+                */
+                ;
+                this._labelEntity
+                /* yjpark changes end */
 				.mount(this);
 
 			return this;
